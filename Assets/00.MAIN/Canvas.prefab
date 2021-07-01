@@ -603,8 +603,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7509135785684449543, guid: b59a67363a6840c4ebc21ea24a0cbc74,
-          type: 3}
+      - m_Target: {fileID: 1791322669}
         m_MethodName: SetColor_A
         m_Mode: 1
         m_Arguments:
@@ -739,8 +738,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7509135785684449543, guid: b59a67363a6840c4ebc21ea24a0cbc74,
-          type: 3}
+      - m_Target: {fileID: 1791322669}
         m_MethodName: SetColor_B
         m_Mode: 1
         m_Arguments:
@@ -840,8 +838,11 @@ GameObject:
   - component: {fileID: 7536123059716250048}
   - component: {fileID: 7536123059716250050}
   - component: {fileID: 7536123059716250049}
+  - component: {fileID: 1791322668}
+  - component: {fileID: 1791322669}
+  - component: {fileID: 1791322675}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: LinePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -903,6 +904,55 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1791322668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536123059716250055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b1372b9bfc062478aad5f65505a101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinePrefab: {fileID: 3571647901230618086, guid: cc826509d72b5f64f878f8c0e4101aa0,
+    type: 3}
+  lrList: []
+--- !u!114 &1791322669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536123059716250055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a195429bbb5ff86498f215672a0b5430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1791322675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536123059716250055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7536123059738742773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,8 +1243,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7509135785684449543, guid: b59a67363a6840c4ebc21ea24a0cbc74,
-          type: 3}
+      - m_Target: {fileID: 1791322669}
         m_MethodName: SetColor_G
         m_Mode: 1
         m_Arguments:
@@ -1643,8 +1692,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7509135785684449543, guid: b59a67363a6840c4ebc21ea24a0cbc74,
-          type: 3}
+      - m_Target: {fileID: 1791322669}
         m_MethodName: SetColor_R
         m_Mode: 1
         m_Arguments:
@@ -1779,8 +1827,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7509135785684449543, guid: b59a67363a6840c4ebc21ea24a0cbc74,
-          type: 3}
+      - m_Target: {fileID: 1791322669}
         m_MethodName: SetWidth
         m_Mode: 1
         m_Arguments:
