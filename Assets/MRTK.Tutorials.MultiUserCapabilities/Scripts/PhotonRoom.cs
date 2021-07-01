@@ -9,6 +9,7 @@ namespace MRTK.Tutorials.MultiUserCapabilities
         public static PhotonRoom Room;
 
         [SerializeField] private GameObject photonUserPrefab = default;
+        //[SerializeField] private GameObject photonUserPrefab = default;
         [SerializeField] private GameObject roverExplorerPrefab = default;
         [SerializeField] private Transform roverExplorerLocation = default;
 
