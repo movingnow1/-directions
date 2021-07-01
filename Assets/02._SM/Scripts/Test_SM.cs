@@ -11,6 +11,7 @@ public class Test : MonoBehaviour
         {
             Debug.Log(devices[i].name);
         }
+        print(devices[0]);
     }
 
     void Update()
