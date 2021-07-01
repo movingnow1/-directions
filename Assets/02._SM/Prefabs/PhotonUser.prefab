@@ -135,9 +135,8 @@ GameObject:
   - component: {fileID: 7934793493780689044}
   - component: {fileID: 7934793493780689045}
   - component: {fileID: 7934793493780689046}
-  - component: {fileID: 7934793493780689050}
   m_Layer: 0
-  m_Name: PhotonUser_pc
+  m_Name: PhotonUser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,16 +206,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUser: 1
---- !u!114 &7934793493780689050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7934793493780689047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f139782cabaa4304eb5994e724ba3107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
