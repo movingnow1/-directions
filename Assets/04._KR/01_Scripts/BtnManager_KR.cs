@@ -7,7 +7,7 @@ public class BtnManager_KR : MonoBehaviourPun
 {
     public GameObject[] objFactory;
 
-    List<GameObject> indicators;
+    List<GameObject> indicators = new List<GameObject>();
 
     void Start()
     {
