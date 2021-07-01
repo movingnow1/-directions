@@ -51,7 +51,7 @@ public class LineController : MonoBehaviourPun
     [PunRPC]
     void ClickDown(Vector3 pos)
     {
-        //if (pos.x >= 0.6f && pos.y < 10) { use = false; return; }
+        if (pos.x >= 0.6f && pos.y < 10) { use = false; return; }
         GameObject go = Instantiate(LinePrefab);
         lrList.Add(go);
         lr = go.GetComponent<LineRenderer>();
