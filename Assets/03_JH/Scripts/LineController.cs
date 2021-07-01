@@ -22,11 +22,13 @@ public class LineController : MonoBehaviourPun
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward);
             photonView.RPC("ClickDown", RpcTarget.All , pos);
+            //ClickDown(pos);
         }
         else if (Input.GetMouseButton(0))
         {
             Vector3 mpos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward);
             photonView.RPC("ClickStay", RpcTarget.All , mpos);
+            //ClickStay(mpos);
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -49,7 +51,7 @@ public class LineController : MonoBehaviourPun
     [PunRPC]
     void ClickDown(Vector3 pos)
     {
-        //if (pos.x >= 0.6f && pos.y < 10) { use = false; return; }
+        if (pos.x >= 0.6f && pos.y < 10) { use = false; return; }
         GameObject go = Instantiate(LinePrefab);
         lrList.Add(go);
         lr = go.GetComponent<LineRenderer>();
