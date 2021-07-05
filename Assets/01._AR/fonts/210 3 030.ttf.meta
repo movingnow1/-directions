@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a53d22e2201701d4eb02026e1c53e1b3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - 210 Nemojin
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 845446464f8538a419a153645a24a0fe, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
