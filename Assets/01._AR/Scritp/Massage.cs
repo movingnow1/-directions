@@ -10,11 +10,11 @@ public class Massage : MonoBehaviourPun
 { 
     public GameObject texts;
     public GameObject pictures;
-    
+
+    string pictureName;
 
     private void Update()
     {
-
         //if (Input.GetKeyDown(KeyCode.T))
         //{
 
@@ -40,14 +40,16 @@ public class Massage : MonoBehaviourPun
     }
     public void t1()
     {
-        photonView.RPC("t2", RpcTarget.Others);
+        print("ttttt");
+        if (pictureName == "sm1") return;
+        photonView.RPC("t2", RpcTarget.All);
     }
     [PunRPC]
     public void t2()
     {
         pictures.GetComponent<Image>().sprite = Resources.Load("sm1", typeof(Sprite)) as Sprite;
         texts.GetComponent<Text>().text = "현실주의  예술가";
-
+        pictureName = "sm1";
 
     }
 
@@ -63,18 +65,19 @@ public class Massage : MonoBehaviourPun
     //    texts.GetComponent<Text>().text = " ";
 
     //}
-    bool use = true;
     public void Ut1()
     {
-        if (!use) return;
-        photonView.RPC("Ut2", RpcTarget.Others);
+        if (pictureName == "p") return;
+        photonView.RPC("Ut2", RpcTarget.All);
     }
     [PunRPC]
     public void Ut2()
     {
+        print("u2");
+        Debug.Log("ss");
         pictures.GetComponent<Image>().sprite = Resources.Load("p", typeof(Sprite)) as Sprite;
         texts.GetComponent<Text>().text = " 사람들을  이끄는 \n 자유,  1830";
-        use = !use;
+        pictureName = "p";
     }
     //public void Uf1()
     //{
