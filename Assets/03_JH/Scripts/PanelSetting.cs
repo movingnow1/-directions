@@ -26,10 +26,8 @@ public class PanelSetting : MonoBehaviour
 
         IMG_Color();
         lc.width = widthScroll.value * 0.1f;
-        
 #if ENABLE_WINMD_SUPPORT
-            Debug.Log("Windows Runtime Support enabled");
-            // Put calls to your custom .winmd API here
+        transform.gameObject.SetActive(false);
 #endif
     }
     private void Update()
