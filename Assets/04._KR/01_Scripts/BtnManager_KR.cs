@@ -7,7 +7,7 @@ public class BtnManager_KR : MonoBehaviourPun
 {
     public GameObject[] objFactory;
 
-    List<GameObject> indicators = new List<GameObject>();
+    public List<GameObject> indicators = new List<GameObject>();
 
     void Start()
     {
@@ -16,6 +16,9 @@ public class BtnManager_KR : MonoBehaviourPun
 
     void Update()
     {
+        if(Input.GetKey(KeyCode.X))
+        {
+        }
     }
 
     public void CreateStraightBtn()
@@ -46,13 +49,17 @@ public class BtnManager_KR : MonoBehaviourPun
     {
         GameObject Obj = Instantiate(objFactory[index]);
         indicators.Add(Obj);
-        Obj.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
+        Obj.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 4 - Camera.main.transform.up;
         Obj.transform.forward = Camera.main.transform.forward;
     }
-
+    [PunRPC]
     void ClearObj()
     {
+        if (indicators.Count == 0) return;
+        else
+        {
+            indicators.RemoveAt(indicators.Count);
+        }
     } 
-
 
 }

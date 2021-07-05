@@ -631,8 +631,6 @@ MonoBehaviour:
   m_Script: {fileID: -1826476478, guid: 4bc5fd733b147194692297d23f623541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWorldCenterMode: 2
-  mWorldCenter: {fileID: 0}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,7 +1689,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LinePrefab: {fileID: 3571647901230618086, guid: cc826509d72b5f64f878f8c0e4101aa0,
     type: 3}
+  use: 1
   lrList: []
+  lrColor: []
 --- !u!114 &7536123059633935281
 MonoBehaviour:
   m_ObjectHideFlags: 0

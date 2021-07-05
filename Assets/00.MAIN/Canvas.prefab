@@ -918,7 +918,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LinePrefab: {fileID: 3571647901230618086, guid: cc826509d72b5f64f878f8c0e4101aa0,
     type: 3}
+  use: 1
   lrList: []
+  lrColor: []
 --- !u!114 &1791322669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,7 +952,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 1
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7536123059738742773
