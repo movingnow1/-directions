@@ -51,21 +51,22 @@ public class Massage : MonoBehaviourPun
 
     }
 
-    public void tf1()
-    {
-        photonView.RPC("tf2", RpcTarget.Others);
-    }
-    [PunRPC]
-    public void tf2()
-    {
+    //public void tf1()
+    //{
+    //    photonView.RPC("tf2", RpcTarget.Others);
+    //}
+    //[PunRPC]
+    //public void tf2()
+    //{
 
-        pictures.GetComponent<Image>().sprite = Resources.Load("E", typeof(Sprite)) as Sprite; ;
-        texts.GetComponent<Text>().text = " ";
+    //    pictures.GetComponent<Image>().sprite = Resources.Load("E", typeof(Sprite)) as Sprite; ;
+    //    texts.GetComponent<Text>().text = " ";
 
-    }
-
+    //}
+    bool use = true;
     public void Ut1()
     {
+        if (!use) return;
         photonView.RPC("Ut2", RpcTarget.Others);
     }
     [PunRPC]
@@ -73,20 +74,20 @@ public class Massage : MonoBehaviourPun
     {
         pictures.GetComponent<Image>().sprite = Resources.Load("p", typeof(Sprite)) as Sprite;
         texts.GetComponent<Text>().text = " 사람들을  이끄는 \n 자유,  1830";
-
+        use = !use;
     }
-    public void Uf1()
-    {
-        photonView.RPC("Uf2", RpcTarget.Others);
-    }
-    [PunRPC]
-    public void Uf2()
-    {
+    //public void Uf1()
+    //{
+    //    photonView.RPC("Uf2", RpcTarget.Others);
+    //}
+    //[PunRPC]
+    //public void Uf2()
+    //{
 
-        pictures.GetComponent<Image>().sprite = Resources.Load("E", typeof(Sprite)) as Sprite; ;
-        texts.GetComponent<Text>().text = " ";
+    //    pictures.GetComponent<Image>().sprite = Resources.Load("E", typeof(Sprite)) as Sprite; ;
+    //    texts.GetComponent<Text>().text = " ";
 
-    }
+    //}
 
 
 
