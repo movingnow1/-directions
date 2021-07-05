@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/01._AR/Scenes/PhotonScene_Alpha_AR.unity
-    guid: 9a7530c11b58c654a8eeb621fd9352b4
   - enabled: 1
     path: Assets/02._SM/Scene/PhotonScene_Alpha_SM_1.unity
     guid: 34f5334523059c5469e7d2dfdba4801e
