@@ -8,32 +8,30 @@ public class LineController : MonoBehaviourPun
 {
     public GameObject LinePrefab;
     LineRenderer lr;
-    bool use = true;
+    public bool use = true;
     public List<GameObject> lrList = new List<GameObject>();
-
+    public List<Color> lrColor = new List<Color>();
     // Update is called once per frame
     void Update()
     {
-//#if ENABLE_WINMD_SUPPORT
-//    Debug.Log("Windows Runtime Support enabled");
-//    // Put calls to your custom .winmd API here
-//#endif
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward);
-            photonView.RPC("ClickDown", RpcTarget.All , pos);
-            //ClickDown(pos);
+            if ((int)(pos.x * 10) > 1)
+            {
+                use = false;
+                return;
+            }
+            ClickDown(pos, co.r, co.g, co.b, co.a, width);
         }
         else if (Input.GetMouseButton(0))
         {
             Vector3 mpos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward);
-            photonView.RPC("ClickStay", RpcTarget.All , mpos);
-            //ClickStay(mpos);
+            ClickStay(mpos);
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            //if (!use) use = true;
-            photonView.RPC("ClickUp", RpcTarget.All);
+            use = true;
         }
 
         if (Input.GetKey(KeyCode.Z))
@@ -44,47 +42,70 @@ public class LineController : MonoBehaviourPun
             {
                 Destroy(lrList[lrList.Count - 1]);
                 lrList.RemoveAt(lrList.Count - 1);
+                lrColor.RemoveAt(lrColor.Count - 1);
             }
         }
-    }
 
-    [PunRPC]
-    void ClickDown(Vector3 pos)
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            OnClickSend();
+        }
+    }
+    
+    void ClickDown(Vector3 pos, float r, float g, float b, float a, float width)
     {
-        if (pos.x >= 0.6f && pos.y < 10) { use = false; return; }
+        if (!use) return;
         GameObject go = Instantiate(LinePrefab);
-        lrList.Add(go);
         lr = go.GetComponent<LineRenderer>();
         lr.positionCount = 1;
-        lr.SetPosition(0, pos + Camera.main.transform.position + Camera.main.transform.forward * 0.1f);
-        LineSetting();
+        LineSetting(new Color(r, g, b, a), width);
+        lrColor.Add(new Color(r, g, b, a));
+        lrList.Add(go);
+        lr.SetPosition(0, pos);
     }
-    [PunRPC]
     void ClickStay(Vector3 mpos)
     {
         if (!use) return;
         Vector3 lrpos = lrList[lrList.Count - 1].GetComponent<LineRenderer>().GetPosition(lr.positionCount - 1);
         if (Vector3.Distance(lrpos, mpos) < 0.005f) return;
         lr.positionCount++;
-        lr.SetPosition(lr.positionCount - 1, mpos + Camera.main.transform.position + Camera.main.transform.forward * 0.1f);
-    }
-    [PunRPC]
-    void ClickUp()
-    {
-        if (!use) use = true;
+        lr.SetPosition(lr.positionCount - 1, mpos);
     }
 
-    [PunRPC]
-    void SendLine()
+    public void OnClickSend()
     {
-
+        if (lrList.Count == 0) return;
+        for (int i = 0; i < lrList.Count; i++)
+        {
+            photonView.RPC("CreateLine", RpcTarget.All , lrColor[i].r , lrColor[i].g , lrColor[i].b , lrColor[i].a);
+            LineRenderer line = lrList[i].GetComponent<LineRenderer>();
+            for (int j = 0; j < line.positionCount; j++)
+                photonView.RPC("SetLinePos", RpcTarget.All, line.GetPosition(j), j);
+        }
+    }
+    [PunRPC]
+    void SetLinePos(Vector3 pos, int i)
+    {
+        lr.positionCount++;
+        lr.SetPosition(i, pos);
+        lr.transform.position = Camera.main.transform.position;
+        lr.transform.forward = Camera.main.transform.forward;
+    }
+    [PunRPC]
+    //라인 생성
+    void CreateLine(float r , float g , float b , float a)
+    {
+        GameObject go = Instantiate(LinePrefab);
+        lr = go.GetComponent<LineRenderer>();
+        lr.SetColors(new Color(r , g , b , a) , new Color(r , g , b , a));
     }
 
     public Color co { get; set; }
     public float width { get; set; }
-    void LineSetting()
+
+    void LineSetting(Color color, float width)
     {
-        lr.SetColors(co, co);
+        lr.SetColors(color, color);
         lr.SetWidth(width, width);
     }
 }
