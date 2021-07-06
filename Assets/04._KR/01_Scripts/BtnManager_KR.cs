@@ -49,8 +49,11 @@ public class BtnManager_KR : MonoBehaviourPun
     {
         GameObject Obj = Instantiate(objFactory[index]);
         indicators.Add(Obj);
-        Obj.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 4 - Camera.main.transform.up;
+        Vector3 dir = Camera.main.transform.position + Camera.main.transform.forward * 4;
+        dir.y = Camera.main.transform.position.y - 1.5f;
+        Obj.transform.position = dir;
         Obj.transform.forward = Camera.main.transform.forward;
+        Obj.transform.rotation = new Quaternion(0, Camera.main.transform.rotation.y, Camera.main.transform.rotation.z, 1);
     }
     [PunRPC]
     void ClearObj()
