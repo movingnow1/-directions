@@ -58,7 +58,11 @@ public class BtnManager_KR : MonoBehaviourPun
         if (indicators.Count == 0) return;
         else
         {
-            indicators.RemoveAt(indicators.Count);
+            for (int i = 0; i < indicators.Count; i++)
+            {
+                Destroy(indicators[i]);
+            }
+            indicators.Clear();
         }
     } 
 
