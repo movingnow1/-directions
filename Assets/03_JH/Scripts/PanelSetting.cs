@@ -21,12 +21,16 @@ public class PanelSetting : MonoBehaviour
         for (int i = 0; i < getScroll.transform.childCount; i++)
             colorScroll[i] = getScroll.transform.GetChild(i).GetComponent<Scrollbar>();
 
-        lc = GetComponent<LineController>();
-
-        widthScroll = GameObject.Find("WidthScrollbar").GetComponent<Scrollbar>();
+        lc = GetComponent<LineController>(); 
+         widthScroll = GameObject.Find("WidthScrollbar").GetComponent<Scrollbar>();
 
         IMG_Color();
         lc.width = widthScroll.value * 0.1f;
+        
+#if ENABLE_WINMD_SUPPORT
+            Debug.Log("Windows Runtime Support enabled");
+            // Put calls to your custom .winmd API here
+#endif
     }
     private void Update()
     {
@@ -34,12 +38,6 @@ public class PanelSetting : MonoBehaviour
         {
             print(img.transform.name);
         }
-    }
-
-    void IMG_Color()
-    {
-        img.color = new Color(colorScroll[0].value, colorScroll[1].value, colorScroll[2].value, colorScroll[3].value);
-        lc.co = img.color;
     }
 
     public void SetColor_R()
@@ -63,5 +61,11 @@ public class PanelSetting : MonoBehaviour
     {
         rect.sizeDelta = new Vector2(100, widthScroll.value * 45);
         lc.width = widthScroll.value * 0.1f;
+    }
+  
+    void IMG_Color()
+    {
+        img.color = new Color(colorScroll[0].value, colorScroll[1].value, colorScroll[2].value, colorScroll[3].value);
+        lc.co = img.color;
     }
 }
