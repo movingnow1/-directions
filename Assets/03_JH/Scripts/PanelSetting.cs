@@ -7,7 +7,7 @@ public class PanelSetting : MonoBehaviour
 {
     Image img;
     RectTransform rect;
-    Scrollbar[] colorScroll;
+    public Scrollbar[] colorScroll;
     Scrollbar widthScroll;
     LineController lc;
     // Start is called before the first frame update
@@ -16,10 +16,6 @@ public class PanelSetting : MonoBehaviour
         GameObject panel = GameObject.Find("LinePanel");
         img = panel.GetComponent<Image>();
         rect = panel.GetComponent<RectTransform>();
-        GameObject getScroll = GameObject.Find("ColorScrollbars");
-        colorScroll = new Scrollbar[getScroll.transform.childCount];
-        for (int i = 0; i < getScroll.transform.childCount; i++)
-            colorScroll[i] = getScroll.transform.GetChild(i).GetComponent<Scrollbar>();
 
         lc = GetComponent<LineController>(); 
          widthScroll = GameObject.Find("WidthScrollbar").GetComponent<Scrollbar>();
