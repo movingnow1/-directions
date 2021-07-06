@@ -8,14 +8,8 @@ public class SpeakerManager_KR : MonoBehaviourPun
 
     void Start()
     {
-        if(photonView.IsMine)
-        {
-            AudioListener.volume = 1;
-        }
-        else
-        {
-            GetComponent<AudioListener>().enabled = false;
-        }
+        AudioListener.volume = 1;
+        
     }
 
     void Update()
