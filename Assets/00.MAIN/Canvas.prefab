@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 337, y: 244}
+  m_AnchoredPosition: {x: 396, y: 227}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &253551680
@@ -425,12 +425,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1304710314}
-  m_Father: {fileID: 8107894818562849944}
-  m_RootOrder: 1
+  m_Father: {fileID: 7536123061213066825}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15.5}
+  m_AnchoredPosition: {x: -170, y: 78}
   m_SizeDelta: {x: 330, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &415483463
@@ -842,12 +842,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1740348965}
-  m_Father: {fileID: 8107894818562849944}
-  m_RootOrder: 3
+  m_Father: {fileID: 7536123061213066825}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: -44.5}
+  m_AnchoredPosition: {x: -170, y: 18}
   m_SizeDelta: {x: 330, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &809801062
@@ -1055,12 +1055,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 105372762}
-  m_Father: {fileID: 8107894818562849944}
-  m_RootOrder: 2
+  m_Father: {fileID: 7536123061213066825}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: -14.5}
+  m_AnchoredPosition: {x: -170, y: 48}
   m_SizeDelta: {x: 330, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &846569194
@@ -2219,12 +2219,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2001451861}
-  m_Father: {fileID: 8107894818562849944}
-  m_RootOrder: 0
+  m_Father: {fileID: 7536123061213066825}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 45.5}
+  m_AnchoredPosition: {x: -170, y: 108}
   m_SizeDelta: {x: 330, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1840962068
@@ -2646,40 +2646,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &6993907445522691290
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8107894818562849944}
-  m_Layer: 0
-  m_Name: ColorScrollbars
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8107894818562849944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6993907445522691290}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 418.5, y: -190, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1840962065}
-  - {fileID: 415483460}
-  - {fileID: 846569191}
-  - {fileID: 809801059}
-  m_Father: {fileID: 7536123061213066825}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7536123061213066829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,7 +2692,10 @@ RectTransform:
   - {fileID: 275480922}
   - {fileID: 1509764255}
   - {fileID: 253551678}
-  - {fileID: 8107894818562849944}
+  - {fileID: 1840962065}
+  - {fileID: 415483460}
+  - {fileID: 846569191}
+  - {fileID: 809801059}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2807,6 +2776,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a195429bbb5ff86498f215672a0b5430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorScroll:
+  - {fileID: 1840962066}
+  - {fileID: 415483461}
+  - {fileID: 846569192}
+  - {fileID: 809801060}
 --- !u!114 &841200744991371038
 MonoBehaviour:
   m_ObjectHideFlags: 0
