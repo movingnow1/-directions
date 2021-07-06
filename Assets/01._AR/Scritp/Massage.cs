@@ -38,14 +38,14 @@ public class Massage : MonoBehaviourPun
         ////}
 
     }
-    public void t1()
+    public void SamuelPhoton()
     {
         print("ttttt");
         if (pictureName == "sm1") return;
-        photonView.RPC("t2", RpcTarget.All);
+        photonView.RPC("Samuel", RpcTarget.All);
     }
     [PunRPC]
-    public void t2()
+    public void Samuel()
     {
         pictures.GetComponent<Image>().sprite = Resources.Load("sm1", typeof(Sprite)) as Sprite;
         texts.GetComponent<Text>().text = "현실주의  예술가";
@@ -65,13 +65,13 @@ public class Massage : MonoBehaviourPun
     //    texts.GetComponent<Text>().text = " ";
 
     //}
-    public void Ut1()
+    public void EugencePhoton()
     {
         if (pictureName == "p") return;
-        photonView.RPC("Ut2", RpcTarget.All);
+        photonView.RPC("Eugene", RpcTarget.All);
     }
     [PunRPC]
-    public void Ut2()
+    public void Eugene()
     {
         print("u2");
         Debug.Log("ss");
