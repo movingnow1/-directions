@@ -23,18 +23,19 @@ public class PhotoCaptureScript : MonoBehaviour
     }
     void OnPhotoCaptureCreated(PhotoCapture captureObject)
     {
-        //photoCaptureObject = captureObject;
+        print("ss");
+        photoCaptureObject = captureObject;
 
-        //List<Resolution> resolutions = new List<Resolution>(PhotoCapture.SupportedResolutions);
-        //Resolution selectedResolution = resolutions[0];
+        List<Resolution> resolutions = new List<Resolution>(PhotoCapture.SupportedResolutions);
+        Resolution selectedResolution = resolutions[0];
 
-        //m_CameraParameters = new CameraParameters(WebCamMode.PhotoMode);
-        //m_CameraParameters.cameraResolutionWidth = selectedResolution.width;
-        //m_CameraParameters.cameraResolutionHeight = selectedResolution.height;
-        //m_CameraParameters.hologramOpacity = 0.0f;
-        //m_CameraParameters.pixelFormat = CapturePixelFormat.BGRA32;
+        m_CameraParameters = new CameraParameters(WebCamMode.PhotoMode);
+        m_CameraParameters.cameraResolutionWidth = selectedResolution.width;
+        m_CameraParameters.cameraResolutionHeight = selectedResolution.height;
+        m_CameraParameters.hologramOpacity = 0.0f;
+        m_CameraParameters.pixelFormat = CapturePixelFormat.BGRA32;
 
-        //captureObject.StartPhotoModeAsync(m_CameraParameters, OnPhotoModeStarted);
+        captureObject.StartPhotoModeAsync(m_CameraParameters, OnPhotoModeStarted);
     }
 
     void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
