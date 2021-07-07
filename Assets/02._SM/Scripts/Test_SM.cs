@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class Test_SM : MonoBehaviour
 {
@@ -16,12 +19,11 @@ public class Test_SM : MonoBehaviour
         print("standalone");
         gameObject.SetActive(false);
 #endif
-
     }
 
     void Update()
     {
-        
+
     }
 
 }

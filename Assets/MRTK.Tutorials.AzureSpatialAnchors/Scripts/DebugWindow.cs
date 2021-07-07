@@ -27,7 +27,7 @@ namespace MRTK.Tutorials.AzureSpatialAnchors
             Application.logMessageReceived -= HandleLog;
         }
 
-        private void HandleLog(string message, string stackTrace, LogType type)
+        public void HandleLog(string message, string stackTrace, LogType type)
         {
             debugText.text += message + " \n";
             Canvas.ForceUpdateCanvases();

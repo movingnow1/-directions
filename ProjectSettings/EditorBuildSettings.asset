@@ -5,16 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/03_JH/Scenes/PhotonScene_Alpha_AR.unity
-    guid: c6e760127f2005a4ebc2156d7e1a45a1
-  - enabled: 0
-    path: Assets/01._AR/Scenes/PhotonScene_Alpha_AR.unity
-    guid: 9a7530c11b58c654a8eeb621fd9352b4
-  - enabled: 0
-    path: Assets/00.MAIN/PhotonScene_Main.unity
-    guid: ae7e367e31293df4abef9abb6258cf99
   - enabled: 1
-    path: Assets/03_JH/Scenes/WebCam_Test_JH.unity
-    guid: 667fc3104fa55a6479b76a4019d0fb2f
+    path: Assets/02._SM/Scene/PhotonScene_SM_TEST.unity
+    guid: 976a972088cdec5488cce498a9b35071
   m_configObjects: {}
