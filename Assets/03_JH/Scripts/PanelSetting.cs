@@ -53,7 +53,7 @@ public class PanelSetting : MonoBehaviour
 
     public void SetWidth()
     {
-        rect.sizeDelta = new Vector2(100, widthScroll.value * 45);
+        rect.sizeDelta = new Vector2(330, widthScroll.value * 45);
         lc.width = widthScroll.value * 0.1f;
     }
   

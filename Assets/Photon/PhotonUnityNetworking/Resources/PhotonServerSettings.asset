@@ -15,7 +15,7 @@ MonoBehaviour:
   AppSettings:
     AppIdRealtime: 96e913ec-1d53-4169-bc2a-e3ff222f408d
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: 069f8379-f69f-4ee1-89cf-f3268c103a64
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -27,12 +27,34 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: 
+  DevRegion: kr
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
-  RpcList: []
+  RpcList:
+  - CantHearYou
+  - ChangeColour
+  - ClickRpc
+  - CreateIndicator
+  - CreateLine
+  - DestroyRpc
+  - DestroySpaceship
+  - Fire
+  - HeresWhy
+  - PunRPC_ResetPlacement
+  - PunRPC_SetNickName
+  - PunRPC_SetPlacement
+  - PunRPC_ShareAzureAnchorId
+  - PunRPC_ToggleExplodedView
+  - PunRPC_TogglePlacementHints
+  - RespawnSpaceship
+  - SetLinePos
+  - t2
+  - Ut2
+  - ClearObj
+  - Eugene
+  - Samuel
   DisableAutoOpenWizard: 1
   ShowSettings: 1
-  DevRegionSetOnce: 0
+  DevRegionSetOnce: 1
