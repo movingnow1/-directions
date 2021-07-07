@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/02._SM/Scene/PhotonScene_Alpha_SM_TEST.unity.meta
 guid: 7407c5ef949001d4c8415a34d03161d3
+=======
+guid: 9bbd4fae690fad143aad89abda88ea11
+folderAsset: yes
+>>>>>>> main:Assets/Photon/PhotonVoice/Demos/DemoVoiceUI/Scripts.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

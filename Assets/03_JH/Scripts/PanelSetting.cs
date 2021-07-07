@@ -7,7 +7,7 @@ public class PanelSetting : MonoBehaviour
 {
     Image img;
     RectTransform rect;
-    Scrollbar[] colorScroll;
+    public Scrollbar[] colorScroll;
     Scrollbar widthScroll;
     LineController lc;
     // Start is called before the first frame update
@@ -16,20 +16,14 @@ public class PanelSetting : MonoBehaviour
         GameObject panel = GameObject.Find("LinePanel");
         img = panel.GetComponent<Image>();
         rect = panel.GetComponent<RectTransform>();
-        GameObject getScroll = GameObject.Find("ColorScrollbars");
-        colorScroll = new Scrollbar[getScroll.transform.childCount];
-        for (int i = 0; i < getScroll.transform.childCount; i++)
-            colorScroll[i] = getScroll.transform.GetChild(i).GetComponent<Scrollbar>();
 
         lc = GetComponent<LineController>(); 
          widthScroll = GameObject.Find("WidthScrollbar").GetComponent<Scrollbar>();
 
         IMG_Color();
         lc.width = widthScroll.value * 0.1f;
-        
 #if ENABLE_WINMD_SUPPORT
-            Debug.Log("Windows Runtime Support enabled");
-            // Put calls to your custom .winmd API here
+        transform.gameObject.SetActive(false);
 #endif
     }
     private void Update()
@@ -59,7 +53,7 @@ public class PanelSetting : MonoBehaviour
 
     public void SetWidth()
     {
-        rect.sizeDelta = new Vector2(100, widthScroll.value * 45);
+        rect.sizeDelta = new Vector2(330, widthScroll.value * 45);
         lc.width = widthScroll.value * 0.1f;
     }
   

@@ -77,12 +77,19 @@ public class LineController : MonoBehaviourPun
         if (lrList.Count == 0) return;
         for (int i = 0; i < lrList.Count; i++)
         {
-            photonView.RPC("CreateLine", RpcTarget.All , lrColor[i].r , lrColor[i].g , lrColor[i].b , lrColor[i].a);
+            photonView.RPC("CreateLine", RpcTarget.Others , lrColor[i].r , lrColor[i].g , lrColor[i].b , lrColor[i].a , width);
             LineRenderer line = lrList[i].GetComponent<LineRenderer>();
             for (int j = 0; j < line.positionCount; j++)
-                photonView.RPC("SetLinePos", RpcTarget.All, line.GetPosition(j), j);
+                photonView.RPC("SetLinePos", RpcTarget.Others, line.GetPosition(j), j);
         }
+
+        for(int i = 0; i< lrList.Count; i++)
+            Destroy(lrList[i]);
+
+        lrList.Clear();
+        lrColor.Clear();
     }
+
     [PunRPC]
     void SetLinePos(Vector3 pos, int i)
     {
@@ -93,11 +100,11 @@ public class LineController : MonoBehaviourPun
     }
     [PunRPC]
     //라인 생성
-    void CreateLine(float r , float g , float b , float a)
+    void CreateLine(float r, float g, float b, float a, float width)
     {
         GameObject go = Instantiate(LinePrefab);
         lr = go.GetComponent<LineRenderer>();
-        lr.SetColors(new Color(r , g , b , a) , new Color(r , g , b , a));
+        LineSetting(new Color(r, g, b, a), width);
     }
 
     public Color co { get; set; }
