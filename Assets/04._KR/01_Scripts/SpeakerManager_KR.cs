@@ -27,12 +27,5 @@ public class SpeakerManager_KR : MonoBehaviourPun
                 voiceRecorder.TransmitEnabled = true;
             }
         }
-        else if(Input.GetKeyUp(pushBtn))
-        {
-            if (view.IsMine)
-            {
-                voiceRecorder.TransmitEnabled = false;
-            }
-        }
     }
 }
