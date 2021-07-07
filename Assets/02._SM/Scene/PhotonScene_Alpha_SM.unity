@@ -3763,7 +3763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeProfile: {fileID: 11400000, guid: 89fd1ebecb9f4764fb803b259b937e24, type: 2}
+  activeProfile: {fileID: 11400000, guid: cba804febd899714fa61b86a1653f054, type: 2}
 --- !u!4 &2075618338
 Transform:
   m_ObjectHideFlags: 0
@@ -3958,6 +3958,7 @@ MonoBehaviour:
   - {fileID: 6293953304183533455, guid: 1755f1418531f374c94bb919b60d02f9, type: 3}
   - {fileID: 7213202515043473773, guid: 96f97dd9188ee784bbbe9bab782098c5, type: 3}
   - {fileID: 6053636191313342466, guid: d9837afa3959dc14c8d7ad701b896b11, type: 3}
+  indicators: []
 --- !u!114 &7536123059633935279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3970,6 +3971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a195429bbb5ff86498f215672a0b5430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorScroll: []
 --- !u!114 &7536123059633935280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3984,7 +3986,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LinePrefab: {fileID: 3571647901230618086, guid: cc826509d72b5f64f878f8c0e4101aa0,
     type: 3}
+  use: 1
   lrList: []
+  lrColor: []
 --- !u!114 &7536123059633935281
 MonoBehaviour:
   m_ObjectHideFlags: 0
