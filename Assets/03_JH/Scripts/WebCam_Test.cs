@@ -17,6 +17,7 @@ public class WebCam_Test : MonoBehaviour
         defaultBackground = background.texture;
         WebCamDevice[] devices = WebCamTexture.devices;
 
+        Debug.Log(devices[0].name + "sss");
         if(devices.Length == 0)
         {
             Debug.Log("No camera detected");
@@ -38,6 +39,7 @@ public class WebCam_Test : MonoBehaviour
             return;
         }
 
+        Debug.Log("Complete");
         backCam.Play();
         background.texture = backCam;
 
