@@ -16,10 +16,7 @@ public class PhotoCaptureScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            OnClick();
-        }
+        
     }
     void OnPhotoCaptureCreated(PhotoCapture captureObject)
     {
