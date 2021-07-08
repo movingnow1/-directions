@@ -17,18 +17,12 @@ public class WebCam_Test : MonoBehaviour
         defaultBackground = background.texture;
         WebCamDevice[] devices = WebCamTexture.devices;
 
-        Debug.Log("ddddddddd");
-
+        Debug.Log(devices[0].name + "sss");
         if(devices.Length == 0)
         {
             Debug.Log("No camera detected");
             camAvailable = false;
             return;
-        }
-        else
-        {
-            Debug.Log("device.length"+ devices.Length);
-            Debug.Log("device.name"+ devices[0].name);
         }
 
         for(int i = 0; i< devices.Length; i++)
@@ -45,6 +39,7 @@ public class WebCam_Test : MonoBehaviour
             return;
         }
 
+        Debug.Log("Complete");
         backCam.Play();
         background.texture = backCam;
 
@@ -54,7 +49,6 @@ public class WebCam_Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("aaa");
         if (!camAvailable) return;
 
         float ratio = (float)backCam.width / (float)backCam.height;

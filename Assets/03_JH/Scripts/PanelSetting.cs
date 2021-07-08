@@ -22,9 +22,9 @@ public class PanelSetting : MonoBehaviour
 
         IMG_Color();
         lc.width = widthScroll.value * 0.1f;
-#if ENABLE_WINMD_SUPPORT
-        transform.gameObject.SetActive(false);
-#endif
+//#if ENABLE_WINMD_SUPPORT
+//        //transform.gameObject.SetActive(false);
+//#endif
     }
     private void Update()
     {
