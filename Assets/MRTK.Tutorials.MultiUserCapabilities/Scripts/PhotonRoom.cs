@@ -93,7 +93,9 @@ namespace MRTK.Tutorials.MultiUserCapabilities
 
         private void CreatPlayer()
         {
+        
             var player = PhotonNetwork.Instantiate(photonUserPrefab.name, Vector3.zero, Quaternion.identity);
+
                 //GameObject.Find("Canvas").SetActive(false);
         }
 
