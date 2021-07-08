@@ -22,12 +22,15 @@ public class LineController : MonoBehaviourPun
                 use = false;
                 return;
             }
-            ClickDown(pos, co.r, co.g, co.b, co.a, width);
+            photonView.RPC("ClickDown", RpcTarget.All, pos, co.r, co.g, co.b, co.a, width);
+            //ClickDown(pos, co.r, co.g, co.b, co.a, width);
         }
         else if (Input.GetMouseButton(0))
         {
             Vector3 mpos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward);
-            ClickStay(mpos);
+
+            photonView.RPC("ClickStay", RpcTarget.All, mpos);
+            //ClickStay(mpos);
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -51,7 +54,7 @@ public class LineController : MonoBehaviourPun
             OnClickSend();
         }
     }
-    
+    [PunRPC]
     void ClickDown(Vector3 pos, float r, float g, float b, float a, float width)
     {
         if (!use) return;
@@ -63,6 +66,7 @@ public class LineController : MonoBehaviourPun
         lrList.Add(go);
         lr.SetPosition(0, pos);
     }
+    [PunRPC]
     void ClickStay(Vector3 mpos)
     {
         if (!use) return;
@@ -71,7 +75,7 @@ public class LineController : MonoBehaviourPun
         lr.positionCount++;
         lr.SetPosition(lr.positionCount - 1, mpos);
     }
-
+    [PunRPC]
     public void OnClickSend()
     {
         if (lrList.Count == 0) return;
