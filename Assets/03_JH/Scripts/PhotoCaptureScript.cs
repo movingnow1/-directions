@@ -16,15 +16,14 @@ public class PhotoCaptureScript : MonoBehaviour
 
     private void Update()
     {
-        
     }
     void OnPhotoCaptureCreated(PhotoCapture captureObject)
     {
-        print("ss");
         photoCaptureObject = captureObject;
 
         List<Resolution> resolutions = new List<Resolution>(PhotoCapture.SupportedResolutions);
         Resolution selectedResolution = resolutions[0];
+        Debug.Log(m_CameraParameters);
 
         m_CameraParameters = new CameraParameters(WebCamMode.PhotoMode);
         m_CameraParameters.cameraResolutionWidth = selectedResolution.width;
@@ -45,7 +44,7 @@ public class PhotoCaptureScript : MonoBehaviour
     {
         if (result.success)
         {
-            string filename = string.Format(@"CapturedImage{0}_n.jpg", Time.time);
+            string filename = string.Format(@"InternalStorage/CapturedImage{0}_n.jpg", Time.time);
             string filePath = System.IO.Path.Combine(Application.persistentDataPath, filename);
 
             photoCaptureObject.TakePhotoAsync(filePath, PhotoCaptureFileOutputFormat.JPG, OnCapturedPhotoToDisk);
