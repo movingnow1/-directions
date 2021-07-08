@@ -23,6 +23,16 @@ public class WebCamHandler_SM : MonoBehaviour
         // 가장 처음 검색되는 후면 카메라 사용
         int selectedCameraIndex = -1;
 
+        if(devices.Length == 0)
+        {
+            Debug.Log("No camera detected");
+        }
+        else
+        {
+            Debug.Log("camera name = "+ devices[0].name);
+        }
+
+
         for (int i = 0; i < devices.Length; i++)
         {
             // 사용 가능한 카메라 로그
