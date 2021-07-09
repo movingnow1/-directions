@@ -58,6 +58,10 @@ MonoBehaviour:
   - ClickDown
   - ClickStay
   - OnClickSend
+  - seeHouse
+  - ClickUp
+  - StartDraw
+  - EndDraw
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
