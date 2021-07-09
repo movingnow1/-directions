@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ObjTrans_KR : MonoBehaviour
 {
+    public GameObject temple_Part;
     //public GameObject exampleObj;
     public bool locate = false;
     void Start()
@@ -12,14 +13,10 @@ public class ObjTrans_KR : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Peaces")
+        if (other.gameObject == temple_Part)
         {
             other.transform.position = transform.position;
             other.transform.rotation = transform.rotation;
