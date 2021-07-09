@@ -48,6 +48,26 @@ public class LineController : MonoBehaviourPun
         {
             OnClickSend();
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            photonView.RPC("StartDraw", RpcTarget.All);
+        }
+        else if (Input.GetKeyUp(KeyCode.C))
+        {
+            photonView.RPC("EndDraw", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    void StartDraw()
+    {
+        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = false;
+    }
+
+    [PunRPC]
+    void EndDraw()
+    {
+        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = true;
     }
     [PunRPC]
     void ClickDown(Vector3 pos, float r, float g, float b, float a, float width)
@@ -58,7 +78,6 @@ public class LineController : MonoBehaviourPun
             return;
         }
         if (!use) return;
-        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = false;
         GameObject go = Instantiate(LinePrefab);
         lr = go.GetComponent<LineRenderer>();
         lr.positionCount = 1;
@@ -80,7 +99,6 @@ public class LineController : MonoBehaviourPun
     void ClickUp()
     {
         use = true;
-        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = true;
     }
     [PunRPC]
     public void OnClickSend()
