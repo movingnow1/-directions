@@ -8,12 +8,14 @@ public class WebCamHandler_SM : MonoBehaviour
     // 주의! 유니티 Inspector에서 지정되어야 함
     // 주의! Renderer 컴퍼넌트를 포함해야 함
     public GameObject objectTarget = null;
+    
 
     // 카메라 입력을 위한 WebCamTexture
     protected WebCamTexture textureWebCam = null;
 
     void Start()
     {
+        print("카메라가 없더라도 출력");
         // 현재 사용 가능한 카메라의 리스트
         WebCamDevice[] devices = WebCamTexture.devices;
 
