@@ -58,6 +58,7 @@ public class LineController : MonoBehaviourPun
     void ClickDown(Vector3 pos, float r, float g, float b, float a, float width)
     {
         if (!use) return;
+        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = false;
         GameObject go = Instantiate(LinePrefab);
         lr = go.GetComponent<LineRenderer>();
         lr.positionCount = 1;
@@ -74,6 +75,11 @@ public class LineController : MonoBehaviourPun
         if (Vector3.Distance(lrpos, mpos) < 0.005f) return;
         lr.positionCount++;
         lr.SetPosition(lr.positionCount - 1, mpos);
+    }
+    [PunRPC]
+    void ClickUp()
+    {
+        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = true;
     }
     [PunRPC]
     public void OnClickSend()
