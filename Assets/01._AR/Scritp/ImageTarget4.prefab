@@ -157,5 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ab3bc711b18ae4a8ea01d3224397be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiateHouse: {fileID: 8675820604162427533, guid: 42a2d31f81ed8c0489192b61750c5def,
-    type: 3}
+  temple: {fileID: 0}
+  templeExe: {fileID: 0}
