@@ -46,7 +46,6 @@ namespace Microsoft.MixedReality.Toolkit.Input
                     (collider is SphereCollider) ||
                     (collider is MeshCollider && (collider as MeshCollider).convex);
             }
-
             if (!containsValidCollider)
             {
                 Debug.LogError("NearInteractionGrabbable requires a " +
