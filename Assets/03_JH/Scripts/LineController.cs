@@ -17,11 +17,6 @@ public class LineController : MonoBehaviourPun
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward);
-            if ((int)(pos.x * 10) > 1)
-            {
-                use = false;
-                return;
-            }
             photonView.RPC("ClickDown", RpcTarget.All, pos, co.r, co.g, co.b, co.a, width);
             //ClickDown(pos, co.r, co.g, co.b, co.a, width);
         }
@@ -34,7 +29,7 @@ public class LineController : MonoBehaviourPun
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            use = true;
+            photonView.RPC("ClickUp", RpcTarget.All);
         }
 
         if (Input.GetKey(KeyCode.Z))
@@ -53,12 +48,36 @@ public class LineController : MonoBehaviourPun
         {
             OnClickSend();
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            photonView.RPC("StartDraw", RpcTarget.All);
+        }
+        else if (Input.GetKeyUp(KeyCode.C))
+        {
+            photonView.RPC("EndDraw", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    void StartDraw()
+    {
+        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = false;
+    }
+
+    [PunRPC]
+    void EndDraw()
+    {
+        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = true;
     }
     [PunRPC]
     void ClickDown(Vector3 pos, float r, float g, float b, float a, float width)
     {
+        if ((int)(pos.x * 10) > 1)
+        {
+            use = false;
+            return;
+        }
         if (!use) return;
-        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = false;
         GameObject go = Instantiate(LinePrefab);
         lr = go.GetComponent<LineRenderer>();
         lr.positionCount = 1;
@@ -79,7 +98,7 @@ public class LineController : MonoBehaviourPun
     [PunRPC]
     void ClickUp()
     {
-        Camera.main.transform.GetComponent<PhotonTransformView>().enabled = true;
+        use = true;
     }
     [PunRPC]
     public void OnClickSend()
