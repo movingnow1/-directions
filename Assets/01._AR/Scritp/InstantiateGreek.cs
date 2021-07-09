@@ -7,6 +7,7 @@ public class InstantiateGreek : MonoBehaviourPun
 {
     public GameObject temple;
     public GameObject templeExe;
+    bool create = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,8 @@ public class InstantiateGreek : MonoBehaviourPun
     // Update is called once per frame
     public void seeHouse()
     {
+        if (create) return;
+        create = true;
         //부품
         GameObject house=Instantiate(templeExe);
         Vector3 dir = Camera.main.transform.position + Camera.main.transform.forward;
